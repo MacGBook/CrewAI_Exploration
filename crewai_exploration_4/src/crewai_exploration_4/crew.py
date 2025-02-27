@@ -23,9 +23,16 @@ class CrewaiExploration4():
 		)
 
 	@agent
-	def civilian(self) -> Agent:
+	def civilian_mixed_opinion(self) -> Agent:
 		return Agent(
-			config=self.agents_config['civilian'],
+			config=self.agents_config['civilian_mixed_opinion'],
+			verbose=True
+		)
+	
+	@agent
+	def civilian_nay_opinion(self) -> Agent:
+		return Agent(
+			config=self.agents_config['civilian_nay_opinion'],
 			verbose=True
 		)
 
@@ -36,9 +43,16 @@ class CrewaiExploration4():
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def reporting_task_mixed(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
+			config=self.tasks_config['reporting_task_mixed'],
+			output_file='report.md'
+		)
+	
+	@task
+	def reporting_task_nay(self) -> Task:
+		return Task(
+			config=self.tasks_config['reporting_task_nay'],
 			output_file='report.md'
 		)
 

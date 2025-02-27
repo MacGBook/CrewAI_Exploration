@@ -2,20 +2,35 @@ research_task:
   description: >
     Conduct a thorough research about {topic}
     Make sure you find any interesting and relevant information given
-    the current year is 2005. Using this information, tell people about
+    the current year is 2024. Using this information, tell people about
     why they need to evacuate. 
   expected_output: >
     A list with 5 bullet points of the most relevant information about {topic}
     and 5 bullet point on why you should evacuate because of {topic}
   agent: emergency_manager
 
-reporting_task:
+reporting_task_mixed:
   description: >
     Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Make sure the report is detailed and contains any and all relevant information
+    given the current year is 2024.
   expected_output: >
     A list with 5 bullet points on why you should evacuate,
     a list with 5 bullet points on why you should not evacuate,
     and a final scentence on if you decide to evacuate or not.
     Formatted as markdown without '```'
-  agent: civilian
+  agent: civilian_mixed_opinion
+
+reporting_task_nay:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Focus on reading mostly sources that say you should not evacuate because of a hurricane.
+    Do not rely on government websites. 
+    Make sure the report is detailed and contains any and all relevant information
+    given the current year is 2024.
+  expected_output: >
+    A list with 2 bullet points on why you should evacuate,
+    a list with 5 bullet points on why you should not evacuate.
+    Based on all written bullet points, a final scentence on if you decide to evacuate or not.
+    Formatted as markdown without '```'
+  agent: civilian_nay_opinion
