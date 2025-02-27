@@ -53,7 +53,7 @@ class CrewaiExploration4():
 	def reporting_task_nay(self) -> Task:
 		return Task(
 			config=self.tasks_config['reporting_task_nay'],
-			output_file='report.md'
+			output_file='report2.md'
 		)
 
 	@crew
